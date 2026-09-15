@@ -86,3 +86,7 @@ discord-music-bot/
   .env.example
   .gitignore
   README.md
+
+## Project Status
+
+The AWS deployment is currently offline to avoid ongoing cloud infrastructure costs. The bot was previously deployed on AWS ECS/Fargate and operated across 2 Discord servers with 165+ combined members.
