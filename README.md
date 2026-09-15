@@ -22,14 +22,14 @@ The application was containerized with Docker and deployed to AWS ECS/Fargate, w
 
 ## Tech Stack
 
-- Python
-- discord.py
-- yt-dlp
-- ffmpeg
-- Docker
-- AWS ECS/Fargate
-- AWS ECR
-- AWS CloudWatch
+| Category | Technologies |
+|---|---|
+| Language | Python |
+| Discord | discord.py |
+| Audio | yt-dlp, FFmpeg |
+| Concurrency | asyncio |
+| Containerization | Docker |
+| AWS | ECS/Fargate, ECR, CloudWatch |
 
 ## Project Structure
 
