@@ -87,6 +87,7 @@ discord-music-bot/
   .env.example
   .gitignore
   README.md
+```
 
 ## Project Status
 
