@@ -62,6 +62,19 @@ Docker Image -> Amazon ECR
 Bot Container -> AWS ECS/Fargate
 Runtime Logs -> Amazon CloudWatch
 
+## Commands
+
+| Command | Function |
+|---|---|
+| `!join` | Connect the bot to the user's voice channel |
+| `!leave` | Disconnect the bot from the voice channel |
+| `!play` | Resolve an audio source and begin playback |
+| `!pause` | Pause the current audio |
+| `!resume` | Resume paused audio |
+| `!stop` | Stop the current audio |
+| `!hello` | Respond to a basic bot interaction |
+| `!info` | Display bot information |
+
 ## Project Structure
 
 ```text
