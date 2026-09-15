@@ -40,6 +40,28 @@ The application was containerized with Docker and deployed to AWS ECS/Fargate, w
 - Containerized the application with Docker and deployed it to AWS ECS/Fargate
 - Troubleshot application dependencies, container runtime behavior, deployment configuration, and voice playback during cloud deployment
 
+## Architecture
+
+```text
+Discord User
+     |
+     v
+discord.py Bot
+     |
+     +----> Command & Event Handling
+     |
+     +----> yt-dlp
+     |        |
+     |        v
+     +----> FFmpeg Audio Playback
+     |
+     v
+Discord Voice Channel
+
+Docker Image -> Amazon ECR
+Bot Container -> AWS ECS/Fargate
+Runtime Logs -> Amazon CloudWatch
+
 ## Project Structure
 
 ```text
