@@ -10,14 +10,15 @@ The application was containerized with Docker and deployed to AWS ECS/Fargate, w
 
 ## Features
 
-- Discord bot command handling
-- Voice-channel connection support
-- YouTube/audio playback support
-- Asynchronous event-driven processing
-- Dockerized application deployment
-- AWS ECS/Fargate cloud hosting
-- AWS ECR image management
-- CloudWatch logging for deployment/debugging
+- Asynchronous, event-driven command handling with `discord.py`
+- Discord voice-channel connection and audio playback
+- Audio source extraction and streaming using `yt-dlp` and FFmpeg
+- Playback controls for play, pause, resume, and stop
+- Commands for joining and leaving voice channels
+- Concurrent audio-source processing using Python's `asyncio` executor
+- Dockerized application runtime
+- AWS ECS/Fargate deployment with images stored in Amazon ECR
+- Runtime and deployment monitoring through Amazon CloudWatch logs
 
 ## Tech Stack
 
