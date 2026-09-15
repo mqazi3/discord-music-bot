@@ -31,6 +31,15 @@ The application was containerized with Docker and deployed to AWS ECS/Fargate, w
 | Containerization | Docker |
 | AWS | ECS/Fargate, ECR, CloudWatch |
 
+## Engineering Highlights
+
+- Built an asynchronous, event-driven Python bot for Discord voice-channel interaction
+- Implemented 8+ commands and event handlers for connection management, playback controls, and bot interaction
+- Integrated `yt-dlp` with FFmpeg for audio source resolution and voice playback
+- Used `asyncio` executor-based processing to keep blocking audio-source extraction from interfering with asynchronous bot operation
+- Containerized the application with Docker and deployed it to AWS ECS/Fargate
+- Troubleshot application dependencies, container runtime behavior, deployment configuration, and voice playback during cloud deployment
+
 ## Project Structure
 
 ```text
