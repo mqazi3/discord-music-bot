@@ -61,6 +61,7 @@ Discord Voice Channel
 Docker Image -> Amazon ECR
 Bot Container -> AWS ECS/Fargate
 Runtime Logs -> Amazon CloudWatch
+```
 
 ## Commands
 
