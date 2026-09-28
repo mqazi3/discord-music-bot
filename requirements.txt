@@ -1,5 +1,4 @@
 discord.py[voice]
 python-dotenv
-yt-dlp==2025.3.31
+yt-dlp
 PyNaCl
-ffmpeg-python

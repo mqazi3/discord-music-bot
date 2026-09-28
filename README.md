@@ -91,6 +91,13 @@ discord-music-bot/
   README.md
 ```
 
+## Requirements
+
+- Python 3.10+
+- FFmpeg installed and on your PATH (Windows: `winget install Gyan.FFmpeg`)
+- In the Discord Developer Portal, enable **Message Content Intent** and **Server Members Intent**
+- A `.env` file with `DISCORD_TOKEN=your-token` (see `.env.example`)
+
 ## Project Status
 
 The AWS deployment is currently offline to avoid ongoing cloud infrastructure costs. The bot was previously deployed on AWS ECS/Fargate and operated across 2 Discord servers with 165+ combined members.
