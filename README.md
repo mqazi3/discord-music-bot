@@ -65,16 +65,18 @@ Runtime Logs -> Amazon CloudWatch
 
 ## Commands
 
+All commands use the `!!` prefix.
+
 | Command | Function |
 |---|---|
-| `!join` | Connect the bot to the user's voice channel |
-| `!leave` | Disconnect the bot from the voice channel |
-| `!play` | Resolve an audio source and begin playback |
-| `!pause` | Pause the current audio |
-| `!resume` | Resume paused audio |
-| `!stop` | Stop the current audio |
-| `!hello` | Respond to a basic bot interaction |
-| `!info` | Display bot information |
+| `!!join` | Connect the bot to the user's voice channel |
+| `!!leave` | Disconnect the bot from the voice channel |
+| `!!play <url>` | Resolve an audio source and begin playback |
+| `!!pause` | Pause the current audio |
+| `!!resume` | Resume paused audio |
+| `!!stop` | Stop the current audio |
+| `!!hello` | Respond to a basic bot interaction |
+| `!!information` | Display bot information |
 
 ## Project Structure
 
