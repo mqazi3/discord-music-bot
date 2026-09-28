@@ -8,6 +8,12 @@ Discord Music Bot is an event-driven Python application that connects to Discord
 
 The application was containerized with Docker and deployed to AWS ECS/Fargate, with container images stored in Amazon ECR and runtime logs monitored through Amazon CloudWatch. The bot was used across 2 Discord servers with 165+ combined members.
 
+## Demo
+
+![The bot joining a voice channel and responding to play, pause, resume, stop, and help commands](docs/images/bot-demo.gif)
+
+![Help output listing every command, followed by join, play, and the bot's Now playing reply](docs/images/bot-commands.png)
+
 ## Features
 
 - Asynchronous, event-driven command handling with `discord.py`
@@ -89,6 +95,7 @@ discord-music-bot/
   .env.example
   .gitignore
   README.md
+  docs/images/      # README screenshots
 ```
 
 ## Requirements
