@@ -19,8 +19,8 @@ The application was containerized with Docker and deployed to AWS ECS/Fargate, w
 - Commands for joining and leaving voice channels
 - Blocking audio extraction runs in an `asyncio` executor so commands stay responsive
 - Dockerized application runtime
-- AWS ECS/Fargate deployment with images stored in Amazon ECR
-- Runtime and deployment monitoring through Amazon CloudWatch logs
+- Previously deployed on AWS ECS/Fargate, with images in Amazon ECR
+- CloudWatch logging while deployed
 
 ## Tech Stack
 
@@ -31,7 +31,8 @@ The application was containerized with Docker and deployed to AWS ECS/Fargate, w
 | Audio | yt-dlp, FFmpeg |
 | Concurrency | asyncio |
 | Containerization | Docker |
-| AWS | ECS/Fargate, ECR, CloudWatch |
+| CI & Quality | GitHub Actions, ruff |
+| AWS (previous deployment) | ECS/Fargate, ECR, CloudWatch |
 
 ## Engineering Highlights
 
@@ -63,6 +64,7 @@ discord.py Bot
      v
 Discord Voice Channel
 
+Previous AWS deployment:
 Docker Image -> Amazon ECR
 Bot Container -> AWS ECS/Fargate
 Runtime Logs -> Amazon CloudWatch
