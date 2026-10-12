@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt ruff
+
+      - name: Lint
+        run: ruff check .
+
+      - name: Check formatting
+        run: ruff format --check .
+
+      - name: Import the bot and check its commands
+        run: |
+          python - <<'PY'
+          import bot
+
+          expected = {"join", "leave", "hello", "information", "play", "pause", "resume", "stop"}
+          registered = {c.name for c in bot.bot.commands if c.name != "help"}
+          assert registered == expected, registered
+          print(f"{len(registered)} commands registered:", sorted(registered))
+          PY
+
+  docker:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Build the image
+        run: docker build -t discord-music-bot .
+
+      - name: Check FFmpeg and the bot module inside the image
+        run: docker run --rm discord-music-bot sh -c "ffmpeg -version | head -1 && python -c 'import bot'"

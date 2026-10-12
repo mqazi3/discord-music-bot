@@ -1,4 +1,6 @@
-discord.py[voice]
-python-dotenv
+# discord.py 2.x provides the commands extension and bot.run(root_logger=...) used in bot.py
+discord.py[voice]>=2.3,<3
+PyNaCl>=1.5,<2
+python-dotenv>=1.0,<2
+# Left unpinned on purpose: YouTube changes often, and old yt-dlp releases stop working
 yt-dlp
-PyNaCl
