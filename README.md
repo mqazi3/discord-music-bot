@@ -1,6 +1,6 @@
 # Discord Music Bot
 
-An asynchronous Discord music bot built with Python, discord.py, yt-dlp, FFmpeg, Docker, and AWS ECS/Fargate.
+An asynchronous Discord music bot built with Python, discord.py, yt-dlp, and FFmpeg, containerized with Docker and previously deployed on AWS ECS/Fargate.
 
 ## Overview
 
@@ -21,7 +21,7 @@ The application was containerized with Docker and deployed to AWS ECS/Fargate, w
 - Audio source extraction and streaming using `yt-dlp` and FFmpeg
 - Playback controls for play, pause, resume, and stop
 - Commands for joining and leaving voice channels
-- Concurrent audio-source processing using Python's `asyncio` executor
+- Blocking audio extraction runs in an `asyncio` executor so commands stay responsive
 - Dockerized application runtime
 - AWS ECS/Fargate deployment with images stored in Amazon ECR
 - Runtime and deployment monitoring through Amazon CloudWatch logs
@@ -105,6 +105,18 @@ discord-music-bot/
 - In the Discord Developer Portal, enable **Message Content Intent** and **Server Members Intent**
 - A `.env` file with `DISCORD_TOKEN=your-token` (see `.env.example`)
 
+## Run locally
+
+```bash
+git clone https://github.com/mqazi3/discord-music-bot.git
+cd discord-music-bot
+cp .env.example .env          # then set DISCORD_TOKEN
+docker build -t discord-music-bot .
+docker run --env-file .env discord-music-bot
+```
+
+Or without Docker: `pip install -r requirements.txt`, then `python MusicBot1.py` (FFmpeg must be on your PATH).
+
 ## Project Status
 
-The AWS deployment is currently offline to avoid ongoing cloud infrastructure costs. The bot was previously deployed on AWS ECS/Fargate and operated across 2 Discord servers with 165+ combined members.
+The AWS deployment is offline to avoid ongoing cloud costs; the AWS resources have been deleted. The bot was previously deployed on AWS ECS/Fargate and used across 2 Discord servers with 165+ combined members.
