@@ -1,5 +1,7 @@
 # Discord Music Bot
 
+[![CI](https://github.com/mqazi3/discord-music-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/mqazi3/discord-music-bot/actions/workflows/ci.yml)
+
 An asynchronous Discord music bot built with Python, discord.py, yt-dlp, and FFmpeg, containerized with Docker and previously deployed on AWS ECS/Fargate.
 
 ## Overview
@@ -44,6 +46,9 @@ The application was containerized with Docker and deployed to AWS ECS/Fargate, w
 - Integrated `yt-dlp` with FFmpeg for audio source resolution and voice playback
 - Used `asyncio` executor-based processing to keep blocking audio-source extraction from interfering with asynchronous bot operation
 - Containerized the application with Docker and deployed it to AWS ECS/Fargate
+- Playback failures are logged server-side with full details; users get a short message without internal errors
+- GitHub Actions lints and format-checks the code, imports the bot to confirm all 8 commands register, and builds the Docker image
+- The container runs as an unprivileged user
 - Troubleshot application dependencies, container runtime behavior, deployment configuration, and voice playback during cloud deployment
 
 ## Architecture
@@ -77,7 +82,7 @@ All commands use the `!!` prefix.
 |---|---|
 | `!!join` | Connect the bot to the user's voice channel |
 | `!!leave` | Disconnect the bot from the voice channel |
-| `!!play <url>` | Resolve an audio source and begin playback |
+| `!!play <url or search terms>` | Resolve an audio source and begin playback |
 | `!!pause` | Pause the current audio |
 | `!!resume` | Resume paused audio |
 | `!!stop` | Stop the current audio |
@@ -88,9 +93,11 @@ All commands use the `!!` prefix.
 
 ```text
 discord-music-bot/
-  MusicBot1.py
+  bot.py            # commands, playback, and entry point
   Dockerfile
   requirements.txt
+  ruff.toml         # lint and format settings
+  .github/workflows/ci.yml
   .dockerignore
   .env.example
   .gitignore
@@ -115,7 +122,7 @@ docker build -t discord-music-bot .
 docker run --env-file .env discord-music-bot
 ```
 
-Or without Docker: `pip install -r requirements.txt`, then `python MusicBot1.py` (FFmpeg must be on your PATH).
+Or without Docker: `pip install -r requirements.txt`, then `python bot.py` (FFmpeg must be on your PATH).
 
 ## Project Status
 
