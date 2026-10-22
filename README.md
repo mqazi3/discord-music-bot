@@ -40,10 +40,9 @@ The application was containerized with Docker and deployed to AWS ECS/Fargate, w
 - Implemented 8 commands plus event handlers for voice connection management, playback controls, and bot interaction
 - Integrated `yt-dlp` with FFmpeg for audio source resolution and voice playback
 - Used `asyncio` executor-based processing to keep blocking audio-source extraction from interfering with asynchronous bot operation
-- Containerized the application with Docker and deployed it to AWS ECS/Fargate
-- Playback failures are logged server-side with full details; users get a short message without internal errors
-- GitHub Actions lints and format-checks the code, imports the bot to confirm all 8 commands register, and builds the Docker image
-- The container runs as an unprivileged user
+- Logged playback failures server-side with full details while showing users a short message without internal errors
+- Added GitHub Actions CI that lints and format-checks the code, imports the bot to confirm all 8 commands register, and builds the Docker image
+- Containerized the application with Docker, running as an unprivileged user, and deployed it to AWS ECS/Fargate
 - Troubleshot application dependencies, container runtime behavior, deployment configuration, and voice playback during cloud deployment
 
 ## Architecture
@@ -107,7 +106,7 @@ discord-music-bot/
 - In the Discord Developer Portal, enable **Message Content Intent** and **Server Members Intent**
 - A `.env` file with `DISCORD_TOKEN=your-token` (see `.env.example`)
 
-## Run locally
+## Run Locally
 
 ```bash
 git clone https://github.com/mqazi3/discord-music-bot.git
