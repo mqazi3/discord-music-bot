@@ -8,7 +8,7 @@ An asynchronous Discord music bot built with Python, discord.py, yt-dlp, and FFm
 
 Discord Music Bot is an event-driven Python application that connects to Discord voice channels and provides command-based audio playback. The bot uses `discord.py` for Discord integration, `yt-dlp` for resolving audio sources, and FFmpeg for voice playback.
 
-The application was containerized with Docker and deployed to AWS ECS/Fargate, with container images stored in Amazon ECR and runtime logs monitored through Amazon CloudWatch. The bot was used across 2 Discord servers with 165+ combined members.
+The application was containerized with Docker and deployed to AWS ECS/Fargate, with container images stored in Amazon ECR and runtime logs monitored through Amazon CloudWatch. The bot was used across 2 Discord servers with 180+ combined members.
 
 ## Features
 
@@ -120,4 +120,4 @@ Or without Docker: `pip install -r requirements.txt`, then `python bot.py` (FFmp
 
 ## Project Status
 
-The AWS deployment is offline to avoid ongoing cloud costs; the AWS resources have been deleted. The bot was previously deployed on AWS ECS/Fargate and used across 2 Discord servers with 165+ combined members.
+The AWS deployment is offline to avoid ongoing cloud costs; the AWS resources have been deleted. The bot was previously deployed on AWS ECS/Fargate and used across 2 Discord servers with 180+ combined members.
